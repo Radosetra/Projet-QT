@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>liste_generale</class>
+ <widget class="QDialog" name="liste_generale">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>989</width>
+    <height>618</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="filename">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>550</y>
+     <width>151</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>251</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Niveau</string>
+   </property>
+   <widget class="QCheckBox" name="L1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>L1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="L3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>L3</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="L2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>L2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="M1">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>130</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>M2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="M2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>90</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>M1</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="logout">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>580</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 21, 0);
+color:balck;</string>
+   </property>
+   <property name="text">
+    <string>retour</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>340</y>
+     <width>251</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Paiement</string>
+   </property>
+   <widget class="QCheckBox" name="non_paye">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>non-paye</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="partiel">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>90</y>
+      <width>131</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>paiement partiel</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="paye">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>130</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>paye</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="view">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>580</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>view</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="save">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>550</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="vue">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>20</y>
+     <width>671</width>
+     <height>551</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>251</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Categories</string>
+   </property>
+   <widget class="QRadioButton" name="radioButton_listGen">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>104</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>liste globale</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_inscription">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>104</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>inscription</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_reinscription">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>104</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>reinscription</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
