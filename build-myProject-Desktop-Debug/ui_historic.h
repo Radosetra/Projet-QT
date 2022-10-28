@@ -23,6 +23,7 @@ class Ui_historic
 public:
     QTableView *vue;
     QPushButton *pushButton;
+    QPushButton *visionner_btn;
 
     void setupUi(QDialog *historic)
     {
@@ -38,6 +39,9 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 63, 5);\n"
 "color:black;\n"
 ""));
+        visionner_btn = new QPushButton(historic);
+        visionner_btn->setObjectName(QString::fromUtf8("visionner_btn"));
+        visionner_btn->setGeometry(QRect(790, 580, 80, 31));
 
         retranslateUi(historic);
 
@@ -48,6 +52,7 @@ public:
     {
         historic->setWindowTitle(QApplication::translate("historic", "Dialog", nullptr));
         pushButton->setText(QApplication::translate("historic", "Retour", nullptr));
+        visionner_btn->setText(QApplication::translate("historic", "Visionner", nullptr));
     } // retranslateUi
 
 };

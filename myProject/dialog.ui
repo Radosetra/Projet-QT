@@ -13,120 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTableView" name="liste_echel">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>21</y>
-     <width>661</width>
-     <height>511</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGroupBox" name="groupBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>261</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Filtre de niveau</string>
-   </property>
-   <widget class="QCheckBox" name="checkBox">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>L1 redoublant</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_2">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>L1 admis</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>L2</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_4">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>90</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>L3</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_5">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>140</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>M1</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_6">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>140</y>
-      <width>111</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>M2</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>180</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Submit</string>
-    </property>
-   </widget>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -144,17 +30,171 @@ color:black;</string>
     <string>Retour</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>560</y>
-     <width>80</width>
+     <x>50</x>
+     <y>40</y>
+     <width>271</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Ajout dans la liste d'attente</string>
+   </property>
+   <widget class="QPushButton" name="ajouter_btn">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>160</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ajouter</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="ajout_inp_date">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>80</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="ajout_inp_id">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>80</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ajout_inp_piece">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>160</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>80</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Identifiant :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>120</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Date de demande :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>160</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Piece justificative :</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>250</y>
+     <width>271</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Autorisation</string>
+   </property>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Identifiant :</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="autorisation_inp_id">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="autorisation_btn">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>80</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Confirmer</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="vision_liste_btn">
+   <property name="geometry">
+    <rect>
+     <x>139</x>
+     <y>400</y>
+     <width>171</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ajouter</string>
+    <string>Visionner la liste des demandes</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="vue">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>50</y>
+     <width>651</width>
+     <height>401</height>
+    </rect>
    </property>
   </widget>
  </widget>

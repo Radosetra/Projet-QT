@@ -32,6 +32,7 @@ public:
     QCheckBox *L2;
     QCheckBox *M1;
     QCheckBox *M2;
+    QCheckBox *D1;
     QPushButton *logout;
     QGroupBox *groupBox_2;
     QCheckBox *non_paye;
@@ -67,10 +68,13 @@ public:
         L2->setGeometry(QRect(150, 40, 87, 23));
         M1 = new QCheckBox(groupBox);
         M1->setObjectName(QString::fromUtf8("M1"));
-        M1->setGeometry(QRect(90, 130, 87, 23));
+        M1->setGeometry(QRect(20, 130, 87, 23));
         M2 = new QCheckBox(groupBox);
         M2->setObjectName(QString::fromUtf8("M2"));
         M2->setGeometry(QRect(150, 90, 87, 23));
+        D1 = new QCheckBox(groupBox);
+        D1->setObjectName(QString::fromUtf8("D1"));
+        D1->setGeometry(QRect(150, 130, 87, 23));
         logout = new QPushButton(liste_generale);
         logout->setObjectName(QString::fromUtf8("logout"));
         logout->setGeometry(QRect(890, 580, 80, 25));
@@ -120,11 +124,12 @@ public:
     {
         liste_generale->setWindowTitle(QApplication::translate("liste_generale", "Dialog", nullptr));
         groupBox->setTitle(QApplication::translate("liste_generale", "Niveau", nullptr));
-        L1->setText(QApplication::translate("liste_generale", "L1", nullptr));
-        L3->setText(QApplication::translate("liste_generale", "L3", nullptr));
-        L2->setText(QApplication::translate("liste_generale", "L2", nullptr));
-        M1->setText(QApplication::translate("liste_generale", "M2", nullptr));
-        M2->setText(QApplication::translate("liste_generale", "M1", nullptr));
+        L1->setText(QApplication::translate("liste_generale", "Licence 1", nullptr));
+        L3->setText(QApplication::translate("liste_generale", "Licence 3", nullptr));
+        L2->setText(QApplication::translate("liste_generale", "Licence 2", nullptr));
+        M1->setText(QApplication::translate("liste_generale", "Master 2", nullptr));
+        M2->setText(QApplication::translate("liste_generale", "Master 1", nullptr));
+        D1->setText(QApplication::translate("liste_generale", "Doctorant 1", nullptr));
         logout->setText(QApplication::translate("liste_generale", "retour", nullptr));
         groupBox_2->setTitle(QApplication::translate("liste_generale", "Paiement", nullptr));
         non_paye->setText(QApplication::translate("liste_generale", "non-paye", nullptr));

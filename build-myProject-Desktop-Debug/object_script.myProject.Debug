@@ -1,6 +1,4 @@
 debug/adduser.o
-debug/ajout_bord.o
-debug/ajout_echel.o
 debug/dialog.o
 debug/finance.o
 debug/historic.o
@@ -14,8 +12,6 @@ debug/reinscription.o
 debug/rmuser.o
 debug/qrc_assets.o
 debug/moc_adduser.o
-debug/moc_ajout_bord.o
-debug/moc_ajout_echel.o
 debug/moc_dialog.o
 debug/moc_finance.o
 debug/moc_historic.o

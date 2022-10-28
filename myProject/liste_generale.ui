@@ -45,7 +45,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>L1</string>
+     <string>Licence 1</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="L3">
@@ -58,7 +58,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>L3</string>
+     <string>Licence 3</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="L2">
@@ -71,20 +71,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>L2</string>
+     <string>Licence 2</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="M1">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>20</x>
       <y>130</y>
       <width>87</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>M2</string>
+     <string>Master 2</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="M2">
@@ -97,7 +97,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>M1</string>
+     <string>Master 1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="D1">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>130</y>
+      <width>87</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Doctorant 1</string>
     </property>
    </widget>
   </widget>
