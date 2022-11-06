@@ -6,79 +6,376 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>496</width>
-    <height>381</height>
+    <width>523</width>
+    <height>523</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>MENU</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QPushButton" name="pushButton">
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="text">
-      <string>Suivi financier</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="text">
-      <string>Payement</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="text">
-      <string>Utilisateur</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="text">
-      <string>Echelonnement</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="text">
-      <string>Historique</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="financeBtn">
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="text">
-      <string>Situation financiere</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="leave">
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-image: url(:/img/img/hero-background-15.jpg);
+
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton_7">
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 0, 0);
-color: rgb(13, 13, 13);</string>
+      <string notr="true">background-image: url(:/img/img/hero-background-15.jpg);
+image: url(:/img/img/sqldeveloper.png);
+border:0px grey;</string>
      </property>
      <property name="text">
-      <string>Quitter</string>
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>21</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>118</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>117</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1" rowspan="3">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	font: 81 15pt &quot;Fira Sans Compressed ExtraBold&quot;;
+	font-style: italic;
+}</string>
+       </property>
+       <property name="text">
+        <string>MENU</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Suivi financier</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Payement</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Utilisateur</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Echelonnement</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Historique</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="financeBtn">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(152, 152, 152);
+	color: rgb(40, 40, 40);
+}QPushButton:pressed{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(81, 81, 81);
+	color: rgb(211, 211, 211);
+}</string>
+       </property>
+       <property name="text">
+        <string>Situation financiere</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="leave">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	font: 75 italic 12pt &quot;Fira Sans&quot;;
+	font-weight: bold;
+	background-color: rgb(235, 0, 0);
+	color: black;
+}
+QpushButton:pressed{
+	background-color: rgb(182, 7, 7);
+}</string>
+       </property>
+       <property name="text">
+        <string>Quitter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="2">
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/img/img/cs-user.png);
+background-color: rgb(150, 150, 150);
+background-image: url(:/img/img/hero-background-15.jpg);
+border-color: rgba(255, 255, 255, 0);
+border-bottom-color: rgba(255, 255, 255, 0);border:0px grey;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="parametre">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+border:transparent;
+image: url(:/img/img/gnome-control-center.png);</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>

@@ -4,6 +4,7 @@
 #include "menu.h"
 #include <QMessageBox>
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -11,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->groupBox->setGeometry(this->width()/2,this->height()/3,this->width()/2,this->height()/3);
-    ui->label_pic->setGeometry(0,this->height()/3,this->width()/2,this->height()/3);
-    QPixmap pix(":/img/img/mh.png");
+    ui->label_pic->setGeometry(0,this->height()/3,this->width()/2,this->height()/2);
+    QPixmap pix(":/img/img/animation_500_l9vj8ca8.gif");
 
     int wt = ui->label_pic->width();
     int ht = ui->label_pic->height();
@@ -26,13 +27,39 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(openDB("C:/Users/micka/Desktop/Databases_projet_fin_annee/Database/projetest.sqlite"))
+    //Ouverture de la base de donnees
+    QString dir = QApplication::applicationDirPath();
+
+    QStringList dirs = dir.split('/');
+
+    QStringList new_dirs;
+    for(int i = 0; i<dirs.size()-1; i++){
+        new_dirs.append(dirs[i]);
+    }
+    QString new_dir = new_dirs.join('/');
+
+    if(!openDB(new_dir+"/QT_Project/Database/projetest.sqlite")){
+        int ind = dirs.indexOf("build-myProject-Desktop-Debug");
+        new_dirs.clear();
+//        qDebug()<< "ind : "<<ind;
+        for(int i = 0 ; i < ind-1; i++ )
+        {
+            new_dirs.append(dirs[i]);
+        }
+        new_dir = new_dirs.join('/');
+
+//        qDebug()<<"new_dir :"<<new_dir;
+
+        openDB(new_dir+"/QT_Project/Database/projetest.sqlite");
+    }
+
+
+    if(db.isOpen())
     {
         QString userName {""},password{""};
         userName = ui->inpUsername->text();
         password = ui->inp_password->text();
         qDebug()<<"user Name :"<<userName;
-
 
         QSqlQuery qry;
         if(qry.exec("SELECT [IdReceptioniste] FROM [receptionistes] WHERE [pseudo receptioniste] = '"+userName+"' AND [password] = '"+password+"';"))
@@ -41,7 +68,6 @@ void MainWindow::on_pushButton_clicked()
             while(qry.next())
             {
                 i++;
-                //userId = qry.value(0).toInt();
             }
             if(i==1)
             {
@@ -49,7 +75,7 @@ void MainWindow::on_pushButton_clicked()
                 myMenu = new menu(this);
                 myMenu->show();
 
-                //We'll insert the id of the current user to manage our functionalities
+                //Changement du statu active pour l'utilisateur connecte
                 qry.exec("UPDATE [receptionistes] SET [active] = 0;");
                 qry.exec("UPDATE [receptionistes] SET [active] = 1 WHERE [pseudo receptioniste] = '"+userName+"';");
              }
@@ -62,7 +88,6 @@ void MainWindow::on_pushButton_clicked()
         {
             QMessageBox::critical(this,"Erreur", "database issue \n sql error ="+qry.lastError().text());
         }
-
     }
     closeDB();
 }

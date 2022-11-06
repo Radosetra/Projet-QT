@@ -12,83 +12,182 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_adduser
 {
 public:
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
+    QGridLayout *gridLayout;
     QLabel *label_4;
-    QLabel *label_5;
-    QLabel *label_6;
-    QLineEdit *inp_nom;
     QLineEdit *inp_prenom;
-    QLineEdit *inp_mail;
+    QLabel *label_6;
     QLineEdit *inp_psd;
+    QLineEdit *inp_nom;
     QLineEdit *inp_pwd;
+    QLabel *label;
+    QLabel *label_7;
+    QLineEdit *inp_mail;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_5;
+    QVBoxLayout *verticalLayout;
     QRadioButton *Admin;
     QRadioButton *Root;
     QPushButton *pushButton;
-    QLabel *label_7;
+    QLabel *label_2;
+    QLabel *label_3;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QDialog *adduser)
     {
         if (adduser->objectName().isEmpty())
             adduser->setObjectName(QString::fromUtf8("adduser"));
-        adduser->resize(325, 358);
-        label = new QLabel(adduser);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(50, 52, 61, 31));
-        label_2 = new QLabel(adduser);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(50, 90, 61, 31));
-        label_3 = new QLabel(adduser);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(50, 130, 61, 31));
+        adduser->resize(400, 345);
+        adduser->setMinimumSize(QSize(400, 345));
+        adduser->setMaximumSize(QSize(400, 345));
+        gridLayout = new QGridLayout(adduser);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         label_4 = new QLabel(adduser);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(50, 170, 61, 31));
-        label_5 = new QLabel(adduser);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(50, 210, 61, 31));
-        label_6 = new QLabel(adduser);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(50, 250, 71, 31));
-        inp_nom = new QLineEdit(adduser);
-        inp_nom->setObjectName(QString::fromUtf8("inp_nom"));
-        inp_nom->setGeometry(QRect(160, 50, 113, 21));
+
+        gridLayout->addWidget(label_4, 4, 0, 1, 1);
+
         inp_prenom = new QLineEdit(adduser);
         inp_prenom->setObjectName(QString::fromUtf8("inp_prenom"));
-        inp_prenom->setGeometry(QRect(160, 90, 113, 21));
-        inp_mail = new QLineEdit(adduser);
-        inp_mail->setObjectName(QString::fromUtf8("inp_mail"));
-        inp_mail->setGeometry(QRect(160, 130, 113, 21));
+        inp_prenom->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"	background-color: #fff;\n"
+"	color:  #000;\n"
+"}\n"
+""));
+
+        gridLayout->addWidget(inp_prenom, 2, 1, 1, 2);
+
+        label_6 = new QLabel(adduser);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        gridLayout->addWidget(label_6, 6, 0, 1, 1);
+
         inp_psd = new QLineEdit(adduser);
         inp_psd->setObjectName(QString::fromUtf8("inp_psd"));
-        inp_psd->setGeometry(QRect(160, 170, 113, 21));
+        inp_psd->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"	background-color: #fff;\n"
+"	color:  #000;\n"
+"}\n"
+""));
+
+        gridLayout->addWidget(inp_psd, 4, 1, 1, 2);
+
+        inp_nom = new QLineEdit(adduser);
+        inp_nom->setObjectName(QString::fromUtf8("inp_nom"));
+        inp_nom->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"	background-color: #fff;\n"
+"	color:  #000;\n"
+"}\n"
+""));
+
+        gridLayout->addWidget(inp_nom, 1, 1, 1, 2);
+
         inp_pwd = new QLineEdit(adduser);
         inp_pwd->setObjectName(QString::fromUtf8("inp_pwd"));
-        inp_pwd->setGeometry(QRect(160, 250, 113, 21));
+        inp_pwd->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"	background-color: #fff;\n"
+"	color:  #000;\n"
+"}\n"
+""));
         inp_pwd->setEchoMode(QLineEdit::Password);
-        Admin = new QRadioButton(adduser);
-        Admin->setObjectName(QString::fromUtf8("Admin"));
-        Admin->setGeometry(QRect(160, 220, 51, 19));
-        Root = new QRadioButton(adduser);
-        Root->setObjectName(QString::fromUtf8("Root"));
-        Root->setGeometry(QRect(220, 220, 51, 19));
-        pushButton = new QPushButton(adduser);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(190, 300, 80, 31));
+
+        gridLayout->addWidget(inp_pwd, 6, 1, 1, 2);
+
+        label = new QLabel(adduser);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout->addWidget(label, 1, 0, 1, 1);
+
         label_7 = new QLabel(adduser);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(20, 0, 301, 41));
+        label_7->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	font: 81 11pt \"Fira Sans Compressed ExtraBold\";\n"
+"}"));
+
+        gridLayout->addWidget(label_7, 0, 0, 1, 3);
+
+        inp_mail = new QLineEdit(adduser);
+        inp_mail->setObjectName(QString::fromUtf8("inp_mail"));
+        inp_mail->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"	background-color: #fff;\n"
+"	color:  #000;\n"
+"}\n"
+""));
+
+        gridLayout->addWidget(inp_mail, 3, 1, 1, 2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        label_5 = new QLabel(adduser);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        horizontalLayout->addWidget(label_5);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        Admin = new QRadioButton(adduser);
+        Admin->setObjectName(QString::fromUtf8("Admin"));
+
+        verticalLayout->addWidget(Admin);
+
+        Root = new QRadioButton(adduser);
+        Root->setObjectName(QString::fromUtf8("Root"));
+
+        verticalLayout->addWidget(Root);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+
+        gridLayout->addLayout(horizontalLayout, 5, 0, 1, 2);
+
+        pushButton = new QPushButton(adduser);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 113, 0);\n"
+"	height: 25px;\n"
+"	width: 80px;\n"
+"	font: 81 italic 12pt \"Fira Sans Compressed ExtraBold\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	background-color: rgb(0, 85, 0);\n"
+"}"));
+
+        gridLayout->addWidget(pushButton, 8, 1, 1, 1);
+
+        label_2 = new QLabel(adduser);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout->addWidget(label_2, 2, 0, 1, 1);
+
+        label_3 = new QLabel(adduser);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 3, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer, 7, 1, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer_2, 9, 1, 1, 1);
+
 
         retranslateUi(adduser);
 
@@ -97,17 +196,17 @@ public:
 
     void retranslateUi(QDialog *adduser)
     {
-        adduser->setWindowTitle(QApplication::translate("adduser", "Dialog", nullptr));
-        label->setText(QApplication::translate("adduser", "Nom", nullptr));
-        label_2->setText(QApplication::translate("adduser", "Prenom(s)", nullptr));
-        label_3->setText(QApplication::translate("adduser", "Adresse mail", nullptr));
-        label_4->setText(QApplication::translate("adduser", "Pseudo", nullptr));
-        label_5->setText(QApplication::translate("adduser", "Niveau", nullptr));
-        label_6->setText(QApplication::translate("adduser", "Mot de passe", nullptr));
+        adduser->setWindowTitle(QApplication::translate("adduser", "Ajout utilisateur", nullptr));
+        label_4->setText(QApplication::translate("adduser", "Pseudo:", nullptr));
+        label_6->setText(QApplication::translate("adduser", "Mot de passe:", nullptr));
+        label->setText(QApplication::translate("adduser", "Nom:", nullptr));
+        label_7->setText(QApplication::translate("adduser", "<center>Les informations serviront a configure le profile des utilisateurs</center> ", nullptr));
+        label_5->setText(QApplication::translate("adduser", "Niveau:", nullptr));
         Admin->setText(QApplication::translate("adduser", "Admin", nullptr));
         Root->setText(QApplication::translate("adduser", "Root", nullptr));
         pushButton->setText(QApplication::translate("adduser", "Confirmer", nullptr));
-        label_7->setText(QApplication::translate("adduser", "Les informations serviront a configure le profile des utilisateurs ", nullptr));
+        label_2->setText(QApplication::translate("adduser", "Prenom(s):", nullptr));
+        label_3->setText(QApplication::translate("adduser", "Adresse mail:", nullptr));
     } // retranslateUi
 
 };

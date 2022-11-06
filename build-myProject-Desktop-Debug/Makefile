@@ -248,6 +248,7 @@ Makefile: ../myProject/myProject.pro C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/wi
 		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/features/yacc.prf \
 		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/features/lex.prf \
 		../myProject/myProject.pro \
+		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Charts.prl \
 		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Gui.prl \
 		C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Sql.prl \
@@ -439,6 +440,7 @@ C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/features/exceptions.prf:
 C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.12.9/5.12.9/mingw73_64/mkspecs/features/lex.prf:
 ../myProject/myProject.pro:
+C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Charts.prl:
 C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Gui.prl:
 C:/Qt/Qt5.12.9/5.12.9/mingw73_64/lib/Qt5Sql.prl:
