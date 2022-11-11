@@ -84,7 +84,7 @@ void adduser::on_pushButton_clicked()
 }
 
 //Permet de recuperer le radio selectionne lors de l'ajout de l'utilisateur
-void adduser::on_Admin_clicked()
+void adduser::on_Admin_clicked()//utilisateur simple
 {
     userNiv = "0";
 }

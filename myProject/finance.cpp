@@ -89,7 +89,7 @@ void finance::on_view_clicked()
 
         QSqlQuery qry;
 
-        qry.prepare("SELECT SUM(e.[montant due]) , SUM(v.[montant]) FROM [etudiantest] e LEFT JOIN [versements] v ON v.IdEtudiant = e.IdEtudiant;");
+        qry.prepare("SELECT SUM(e.[montant due]) , SUM(v.[montant]) FROM [etudiants] e LEFT JOIN [versements] v ON v.IdEtudiant = e.IdEtudiant;");
 
         if(qry.exec())
         {
@@ -113,8 +113,8 @@ void finance::on_view_clicked()
         qDebug()<<"somEnAttPourcent : "<<somEnAttPourcent<<"\tsomRecuPourcent : "<<somRecuPourcent;
 
 
-            series->append("Somme restant : "+QString::number(sommeTotale-sommeRecu), somEnAttPourcent);
-            series->append("Somme recu"+QString::number(sommeRecu), somRecuPourcent);
+            series->append("Somme restant : "+QString::number(sommeTotale-sommeRecu)+" AR", somEnAttPourcent);
+            series->append("Somme recu : "+QString::number(sommeRecu)+" AR", somRecuPourcent);
 
 
             QPieSlice *slice_3 = series->slices().at(2);

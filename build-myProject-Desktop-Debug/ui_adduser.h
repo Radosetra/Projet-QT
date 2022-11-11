@@ -202,7 +202,7 @@ public:
         label->setText(QApplication::translate("adduser", "Nom:", nullptr));
         label_7->setText(QApplication::translate("adduser", "<center>Les informations serviront a configure le profile des utilisateurs</center> ", nullptr));
         label_5->setText(QApplication::translate("adduser", "Niveau:", nullptr));
-        Admin->setText(QApplication::translate("adduser", "Admin", nullptr));
+        Admin->setText(QApplication::translate("adduser", "Utiliseteur", nullptr));
         Root->setText(QApplication::translate("adduser", "Root", nullptr));
         pushButton->setText(QApplication::translate("adduser", "Confirmer", nullptr));
         label_2->setText(QApplication::translate("adduser", "Prenom(s):", nullptr));

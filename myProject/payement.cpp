@@ -61,7 +61,7 @@ void inscription::on_pushButton_clicked()
 
     //Recuperation de l''id de l'etudiant db
 
-    qry.prepare("SELECT [IdEtudiant] FROM [etudiantest] WHERE [identifiant] = "+idEtudiant+";");
+    qry.prepare("SELECT [IdEtudiant] FROM [etudiants] WHERE [identifiant] = "+idEtudiant+";");
     if(qry.exec())
     {
 
@@ -86,7 +86,7 @@ void inscription::on_pushButton_clicked()
         qDebug()<<"First select "<< qry.lastError().text();
     }
 
-    qry.prepare("SELECT *,SUM([montant]) FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE e.[IdEtudiant] = "+idEtudiantDb+" GROUP BY e.[IdEtudiant];");
+    qry.prepare("SELECT *,SUM([montant]) FROM [etudiants] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE e.[IdEtudiant] = "+idEtudiantDb+" GROUP BY e.[IdEtudiant];");
     if(qry.exec())
     {
         int i(0);
@@ -250,7 +250,7 @@ void inscription::on_pushButton_2_clicked()
     //Date butoire
     //Recuperation de la date fin payement
     QString dateFinalePayement {""},dateFinaleEche{""};
-    if(!qry.exec("SELECT [date fin payement],[date fin echellonement] FROM [dates]; ")){
+    if(!qry.exec("SELECT [date fin payement],[date fin echelonnement] FROM [dates]; ")){
         qDebug()<<"query on date error : "<<qry.lastError().text();
     }else{
         while (qry.next()) {

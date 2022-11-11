@@ -13,8 +13,6 @@ rmuser::~rmuser()
     delete ui;
 }
 
-
-
 void rmuser::on_pushButton_clicked()
 {
     QString id = ui->inp_ID->text();

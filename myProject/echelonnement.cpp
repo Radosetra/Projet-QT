@@ -66,7 +66,7 @@ void Dialog::on_ajouter_btn_clicked()
     identifiant = ui->ajout_inp_id->text();
 
     //Recuperation de IdEtudiant
-    if(qry.exec("SELECT [IdEtudiant] FROM [etudiantest] WHERE [identifiant] ="+identifiant+";"))
+    if(qry.exec("SELECT [IdEtudiant] FROM [etudiants] WHERE [identifiant] ="+identifiant+";"))
     {
         int i=0;
         while (qry.next())
@@ -92,7 +92,7 @@ void Dialog::on_ajouter_btn_clicked()
     }
 
     //Verification que l'etudiant n'est pas deja dans la liste d'echelonnement
-    if(qry.exec("SELECT * FROM [echellonements] WHERE [IdEtudiant] = "+IdEtudiantDB+";"))
+    if(qry.exec("SELECT * FROM [echelonnements] WHERE [IdEtudiant] = "+IdEtudiantDB+";"))
     {
         int j = 0;
         while(qry.next())
@@ -108,7 +108,7 @@ void Dialog::on_ajouter_btn_clicked()
     }
 
     //Verification de l'autorisation de l'etudiant
-    if(qry.exec("SELECT [autorisation] FROM [etudiantest] WHERE [IdEtudiant] ="+IdEtudiantDB+";"))
+    if(qry.exec("SELECT [autorisation] FROM [etudiants] WHERE [IdEtudiant] ="+IdEtudiantDB+";"))
     {
 
         while(qry.next())
@@ -152,7 +152,7 @@ void Dialog::on_ajouter_btn_clicked()
     QString piecesJustivicative = ui->ajout_inp_piece->text();
     piecesJustivicative.toInt(&isInt);
     //Verification que le justificatif est unique
-    if(qry.exec("SELECT [piece justificative] FROM [echellonements];"))
+    if(qry.exec("SELECT [piece justificative] FROM [echelonnements];"))
     {
         while (qry.next())
         {
@@ -167,7 +167,7 @@ void Dialog::on_ajouter_btn_clicked()
     //Verification finale
     if(piecesJustivicative.length() == 6 && isInt && isUnique)
     {
-        qry.prepare("INSERT INTO [echellonements] ([date echellonement],[piece justificative],[IdEtudiant]) VALUES ('"+dateDemande+"','"+piecesJustivicative+"',"+IdEtudiantDB+");");
+        qry.prepare("INSERT INTO [echelonnements] ([date echelonnement],[piece justificative],[IdEtudiant]) VALUES ('"+dateDemande+"','"+piecesJustivicative+"',"+IdEtudiantDB+");");
         if(!qry.exec())
         {
             qDebug()<<"query issue : "<<qry.lastError().text();
@@ -229,7 +229,7 @@ void Dialog::on_autorisation_btn_clicked()
 
 
     //Recuperation de IdEtudiant appartir de l'identifiant (identifiant == no matricule || no concours)
-    if(qry.exec("SELECT [IdEtudiant] FROM [etudiantest] WHERE [identifiant] ="+identifiant+";"))
+    if(qry.exec("SELECT [IdEtudiant] FROM [etudiants] WHERE [identifiant] ="+identifiant+";"))
     {
         int i=0;
         while (qry.next())
@@ -257,7 +257,7 @@ void Dialog::on_autorisation_btn_clicked()
     //Verification que l'etudiant n'est pas deja echelonnement
     //Liste echellonement = liste de demande
     bool hasAutorisation = false;
-    if(qry.exec("SELECT * FROM [echellonements] WHERE [IdEtudiant] = "+IdEtudiantDB+";"))
+    if(qry.exec("SELECT * FROM [echelonnements] WHERE [IdEtudiant] = "+IdEtudiantDB+";"))
     {
         int j = 0;
         while(qry.next())
@@ -266,7 +266,7 @@ void Dialog::on_autorisation_btn_clicked()
         }
         if(j==1)
         {
-            if(qry.exec("SELECT [autorisation] FROM [etudiantest] WHERE [IdEtudiant] ="+IdEtudiantDB+";"))
+            if(qry.exec("SELECT [autorisation] FROM [etudiants] WHERE [IdEtudiant] ="+IdEtudiantDB+";"))
             {
 
                 while(qry.next())
@@ -283,9 +283,9 @@ void Dialog::on_autorisation_btn_clicked()
             }
             else
             {
-                if(qry.exec("UPDATE [etudiantest] SET [autorisation] = 1 WHERE [IdEtudiant] = "+IdEtudiantDB+" ;"))
+                if(qry.exec("UPDATE [etudiants] SET [autorisation] = 1 WHERE [IdEtudiant] = "+IdEtudiantDB+" ;"))
                 {
-                    qry.prepare("DELETE FROM [echellonements]  WHERE [IdEtudiant] = "+IdEtudiantDB+" ;");
+                    qry.prepare("DELETE FROM [echelonnements]  WHERE [IdEtudiant] = "+IdEtudiantDB+" ;");
                     if(qry.exec())
                     {
                         QMessageBox::information(this,"Action accomplie","Etudiant autoriser");
@@ -345,7 +345,7 @@ void Dialog::on_vision_liste_btn_clicked()
     //Pour presenter notre liste, nous avons besoin
     QSqlQueryModel *model = new QSqlQueryModel();
 
-    q->prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],ec.[date echellonement],ec.[piece justificative] FROM [echellonements] ec INNER JOIN [etudiantest] e ON ec.[IdEtudiant] = e.[IdEtudiant];");
+    q->prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],ec.[date echelonnement],ec.[piece justificative] FROM [echelonnements] ec INNER JOIN [etudiants] e ON ec.[IdEtudiant] = e.[IdEtudiant];");
     if(q->exec()){
         model->setQuery(*q);
         ui->vue->setModel(model);

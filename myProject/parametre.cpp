@@ -92,7 +92,7 @@ void parametre::on_pushButton_2_clicked()
             return;
         }else{
             //Insertion des nouveaux tarifs dans la base de donne
-            if(!qry.exec("UPDATE [etudiantest] SET [montant due] = "+inp_licence+" WHERE ([niveau] = 'Licence 1') OR ([niveau] = 'Licence 2') OR ([niveau] = 'Licence 3');")){
+            if(!qry.exec("UPDATE [etudiants] SET [montant due] = "+inp_licence+" WHERE ([niveau] = 'Licence 1') OR ([niveau] = 'Licence 2') OR ([niveau] = 'Licence 3');")){
                 QMessageBox::critical(this,"ERROR","Tsy nety le query le go");
                 qDebug()<<"query error : "<<qry.lastError().text();
                 closeDB();
@@ -100,7 +100,7 @@ void parametre::on_pushButton_2_clicked()
             }
 
             //Master
-            if(!qry.exec("UPDATE [etudiantest] SET [montant due] = "+inp_master+" WHERE ([niveau] = 'Master 1') OR ([niveau] = 'Master 2');")){
+            if(!qry.exec("UPDATE [etudiants] SET [montant due] = "+inp_master+" WHERE ([niveau] = 'Master 1') OR ([niveau] = 'Master 2');")){
                 QMessageBox::critical(this,"ERROR","Tsy nety le query master le go");
                 qDebug()<<"query error : "<<qry.lastError().text();
                 closeDB();
@@ -108,14 +108,16 @@ void parametre::on_pushButton_2_clicked()
             }
 
             //DOC/ETR/MDN
-            if(!qry.exec("UPDATE [etudiantest] SET [montant due] = "+inp_doctEtrIns+" WHERE ([niveau] = 'Doctorat 1') OR ([type etudiant] = 'etranger') OR ([type etudiant] = 'MDN');")){
-                QMessageBox::critical(this,"ERROR","Tsy nety le query Doc le go");
+            if(!qry.exec("UPDATE [etudiants] SET [montant due] = "+inp_doctEtrIns+" WHERE ([niveau] = 'Doctorat 1') OR ([type etudiant] = 'etranger') OR ([type etudiant] = 'MDN');")){
+                QMessageBox::critical(this,"ERROR","Tsy nety le query Doc");
                 qDebug()<<"query error : "<<qry.lastError().text();
                 closeDB();
                 return;
             }
 
             QMessageBox::information(this,"Succes","Les frais d'inscription ou/et reinscription ont ete mise a jour.");
+            QString modifFrais = "Modification des droits d'inscription et reinscription.";
+            addHistorique(modifFrais);
         }
     }else {
         QMessageBox::information(this,"Query error","La table des payements est inaccesible");
@@ -159,7 +161,7 @@ void parametre::on_pushButton_clicked()
 
     //Recuperation des montants par niveau
 
-    if(qry.exec("SELECT [montant due] FROM [etudiantest] GROUP BY [montant due];")){
+    if(qry.exec("SELECT [montant due] FROM [etudiants] GROUP BY [montant due];")){
         int i = 0;
         while (qry.next()) {
             ++i;
@@ -238,8 +240,11 @@ void parametre::on_pushButton_3_clicked()
         closeDB();
         return;
     }else {
-        if(qry.exec("INSERT INTO [dates] ([date fin payement],[date fin echellonement]) VALUES ( '"+inp_dateIns+"' , '"+inp_dateEch+"' );"))
+        if(qry.exec("INSERT INTO [dates] ([date fin payement],[date fin echelonnement]) VALUES ( '"+inp_dateIns+"' , '"+inp_dateEch+"' );")){
             QMessageBox::information(this,"Succes","Les dates de payements ont bien ete mise a jour");
+            QString modifDate = "Modification des dates finales de payements.";
+            addHistorique(modifDate);
+        }
         else{
             qDebug()<<"query error insert: "<<qry.lastError().text();
         }

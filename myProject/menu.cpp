@@ -75,7 +75,6 @@ void menu::on_pushButton_3_clicked()
         while(qry.next())
         {
             userNiv = qry.value(0).toInt();
-
         }
     }
     else

@@ -86,7 +86,7 @@ void modifuser::on_pushButton_clicked()
     hide();
 }
 
-void modifuser::on_Admin_clicked()
+void modifuser::on_Admin_clicked()//utilisateur simple
 {
     userNiv = "0";
 }

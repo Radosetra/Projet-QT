@@ -46,6 +46,31 @@ public:
         }
     }
 
+    //Creation de fonctions pour enregistrer les actions dans l'historique
+    void addHistorique(QString action)
+    {
+        QSqlQuery q;
+        QString responsable{""};
+        if(q.exec("SELECT [pseudo receptioniste] FROM [receptionistes] WHERE [active] = 1 ;"))
+        {
+            while(q.next())
+            {
+                responsable = q.value(0).toString();
+            }
+            if(q.exec("INSERT INTO [historiques] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
+            {
+                qDebug()<<"Enregistrement action reussit";
+            }
+            else
+            {
+                qDebug()<<"Enregistrement action error";
+            }
+        }
+        else
+            qDebug()<<"Failled to get receptioniste name";
+    }
+
+
 public:
     explicit parametre(QWidget *parent = nullptr);
     ~parametre();

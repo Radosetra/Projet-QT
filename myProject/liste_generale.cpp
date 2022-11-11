@@ -80,7 +80,8 @@ void liste_generale::on_view_clicked()
                     filtreNiveau += " ([niveau] = 'Licence 1' AND [observation] = 'Admis')";
                 } else if(ui->radioButton_reinscription->isChecked()){
                     filtreNiveau += " ([niveau] = 'Licence 1' AND [observation] = 'Redoublant')";
-                }
+                } else
+                    filtreNiveau += " [niveau] = 'Licence 1' ";
             }
             if(ui->L2->checkState())
             {
@@ -146,7 +147,7 @@ void liste_generale::on_view_clicked()
         }
 
         //VERIFICATION QU'IL N'Y A PAS D'ERREUR DANS LA REQUETE
-        if(!qry->exec("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+filtreNiveau+") GROUP BY e.[IdEtudiant]  HAVING ("+filtrePayement+");"))
+        if(!qry->exec("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiants] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+filtreNiveau+") GROUP BY e.[IdEtudiant]  HAVING ("+filtrePayement+");"))
         {
             QMessageBox::information(this,"ERROR","Not saved : " + qry->lastError().text());
             closeDB();
@@ -279,7 +280,7 @@ void liste_generale::on_save_clicked()
     QSqlQuery qry;
 
     //Recuperation des filtres, ici les filtres sont des attribut le notre fenetre(Voir liste_generale.h)
-    qry.prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiantest] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+qryNiv+") GROUP BY e.[IdEtudiant]  HAVING ("+qryPay+");");
+    qry.prepare("SELECT e.[identifiant],e.[nom],e.[prenom],e.[niveau],SUM(v.[montant]) AS 'Montant payer' FROM [etudiants] e LEFT JOIN [versements] v ON v.[IdEtudiant] = e.[IdEtudiant] WHERE ("+qryNiv+") GROUP BY e.[IdEtudiant]  HAVING ("+qryPay+");");
 
     if(qry.exec())
     {

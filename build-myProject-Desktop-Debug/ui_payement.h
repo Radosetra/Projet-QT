@@ -633,7 +633,7 @@ public:
         inp_naissance->setText(QString());
         label_6->setText(QApplication::translate("inscription", "Type :", nullptr));
         inp_type->setText(QString());
-        label_10->setText(QApplication::translate("inscription", "Autorisation echellonement :", nullptr));
+        label_10->setText(QApplication::translate("inscription", "Autorisation echelonnement :", nullptr));
         inp_autEchel->setText(QString());
         label_11->setText(QApplication::translate("inscription", "Status de paiement:", nullptr));
         inp_StatuPaiement->setText(QString());

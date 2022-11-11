@@ -53,7 +53,7 @@ void historic::on_visionner_btn_clicked()
     //Pour presenter notre liste, nous avons besoin
     QSqlQueryModel *model = new QSqlQueryModel();
 
-    qry->prepare("SELECT * FROM [historique];");
+    qry->prepare("SELECT * FROM [historiques];");
     if(!qry->exec())
     {
         QMessageBox::information(this,"Error","sql issue"+qry->lastError().text());

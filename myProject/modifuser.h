@@ -60,7 +60,7 @@ public:
             {
                 responsable = q.value(0).toString();
             }
-            if(q.exec("INSERT INTO [historique] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
+            if(q.exec("INSERT INTO [historiques] ([date action],[heure action],[responsable],[action]) VALUES (date('now'),time('now'),\""+responsable+"\",\""+action+"\");"))
             {
                 qDebug()<<"Enregistrement action reussit";
             }

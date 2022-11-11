@@ -173,7 +173,7 @@ public:
         label->setText(QApplication::translate("modifuser", "Identifiant:", nullptr));
         label_2->setText(QApplication::translate("modifuser", "Acces:", nullptr));
         Root->setText(QApplication::translate("modifuser", "Root", nullptr));
-        Admin->setText(QApplication::translate("modifuser", "Admin", nullptr));
+        Admin->setText(QApplication::translate("modifuser", "Utilisateur", nullptr));
         pushButton->setText(QApplication::translate("modifuser", "Confirmer", nullptr));
     } // retranslateUi
 

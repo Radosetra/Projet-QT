@@ -64,7 +64,7 @@ void wprofil::on_visionner_clicked()
             //Affichage des informations sur l'utilisateur
             ui->profile_nom->setText(qry.value(0).toString());
             ui->profile_prenom->setText(qry.value(1).toString());
-            ui->profile_niveau->setText(qry.value(2).toBool()?"Root":"Admin");
+            ui->profile_niveau->setText(qry.value(2).toBool()?"Root":"Utilisateur");
             ui->profil_email->setText(qry.value(3).toString());
         }
     }else

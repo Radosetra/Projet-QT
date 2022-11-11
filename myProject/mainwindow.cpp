@@ -41,14 +41,11 @@ void MainWindow::on_pushButton_clicked()
     if(!openDB(new_dir+"/QT_Project/Database/projetest.sqlite")){
         int ind = dirs.indexOf("build-myProject-Desktop-Debug");
         new_dirs.clear();
-//        qDebug()<< "ind : "<<ind;
         for(int i = 0 ; i < ind-1; i++ )
         {
             new_dirs.append(dirs[i]);
         }
         new_dir = new_dirs.join('/');
-
-//        qDebug()<<"new_dir :"<<new_dir;
 
         openDB(new_dir+"/QT_Project/Database/projetest.sqlite");
     }
